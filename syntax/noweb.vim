@@ -28,8 +28,8 @@ endif
 
 execute "syntax include @Code syntax/" . noweb_language . ".vim"
 " syntax include @Code syntax/vim.vim
-syntax region codeChunk start="^<<.*>>=$" end="^@$" contains=@Code keepend
+syntax region codeChunk start="^<<.*>>=$" end="^@$" contains=@Code containedin=ALL keepend
 if exists("noweb_fold_code") && noweb_fold_code == 1
     set foldmethod=syntax
-    syntax region codeChunk start="^<<.*>>=$" end="^@$" transparent fold keepend
+    syntax region codeChunk start="^<<.*>>=$" end="^@$" transparent fold containedin=ALL keepend
 endif
